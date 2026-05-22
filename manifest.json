@@ -1,0 +1,22 @@
+{
+  "name": "TeraSave - Terabox Video Downloader",
+  "short_name": "TeraSave",
+  "description": "Download Terabox videos free in HD quality",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080d1a",
+  "theme_color": "#4f9eff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192/4f9eff/ffffff?text=TS",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512/4f9eff/ffffff?text=TS",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
