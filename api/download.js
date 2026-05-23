@@ -1,16 +1,23 @@
 export default async function handler(req, res) {
 
-  const response = await fetch("YOUR_API_URL", {
+  const { url } = req.body
 
-    method: "POST",
+  const response = await fetch(
+    "https://xapiverse.com/api/terabox-pro",
+    {
 
-    headers: {
-      "x-api-key": process.env.API_KEY,
-      "Content-Type": "application/json"
-    },
+      method: "POST",
 
-    body: JSON.stringify(req.body)
-  })
+      headers: {
+        "Content-Type": "application/json",
+        "sk_1c0a07cdf69031e04c9baea0e62edaf9": process.env.API_KEY
+      },
+
+      body: JSON.stringify({
+        url: url
+      })
+    }
+  )
 
   const data = await response.json()
 
