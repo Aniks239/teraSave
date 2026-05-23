@@ -817,7 +817,7 @@
     var currentVideoUrl = '';
     async function doDownload() {
       var link = document.getElementById('tbLink').value.trim();
-      var btn = document.getElementById('dlBtn');
+      var btn = document.getElementById('url');
       document.getElementById('errBox').classList.remove('show');
       document.getElementById('resBox').classList.remove('show');
       if (!link) { showErr('Please paste a Terabox link first!'); return; }
