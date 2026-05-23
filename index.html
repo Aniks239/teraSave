@@ -405,9 +405,40 @@
 
       <div class="inp-wrap au d3">
         <button class="paste-btn" onclick="pasteFromClipboard()"><i class="ti ti-clipboard"></i> Tap to Paste Terabox Link</button>
-        <input class="inp" id="url" placeholder="Or type your Terabox link here..." type="text"/>
+        <input type="text" id="url" placeholder="Paste TeraBox link">
+
+<button onclick="downloadVideo()">
+  Download
+</button>
+
+<script>
+
+async function downloadVideo() {
+
+  const url = document.getElementById("url").value
+
+  const response = await fetch("/api/download", {
+
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify({
+      url: url
+    })
+  })
+
+  const data = await response.json()
+
+  console.log(data)
+
+}
+
+</script>
         <div class="fetch-progress" id="fetchProgress"><div class="fetch-bar" id="fetchBar"></div></div>
-        <button class="btn-main" id="dlBtn" onclick="downloadVideo()"><i class="ti ti-download"></i> Get Video</button>
+        
       </div>
       <div class="loader" id="loader"><div class="spin"></div> Fetching your video, please wait...</div>
       <div class="err-box" id="errBox"><i class="ti ti-alert-circle"></i> <span id="errMsg"></span></div>
