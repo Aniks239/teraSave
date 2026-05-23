@@ -1058,6 +1058,30 @@
       }
     };
 
+async function downloadVideo() {
+
+  const url = document.getElementById("url").value
+
+  const response = await fetch("/api/download", {
+
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify({
+      url: url
+    })
+  })
+
+  const data = await response.json()
+
+  console.log(data)
+
+}
+
+
   </script>
 </body>
 </html>
